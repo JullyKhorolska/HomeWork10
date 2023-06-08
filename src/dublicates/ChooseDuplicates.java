@@ -6,9 +6,16 @@ public class ChooseDuplicates {
     public static void main(String[] args) {
         List<Integer> listWithDuplicates = new ArrayList <>();
         List<Integer> listWithOutDuplicates = new ArrayList <>();
+
+
         for (int i = 0; i < 100; i++) {
             listWithDuplicates.add(i, (int) (Math.random() * 50 - 1));
         }
+
+//        first variant
+        Set <Integer> setInt = new LinkedHashSet<>(listWithDuplicates);
+
+//        second variant
         listWithOutDuplicates.add(listWithDuplicates.get(0));
         int count = 0;
 
@@ -17,13 +24,16 @@ public class ChooseDuplicates {
                 listWithOutDuplicates.add(listWithDuplicates.get(i));
             } else count++;
         }
-        Collections.sort(listWithDuplicates);
-        Collections.sort(listWithOutDuplicates);
+//        Collections.sort(listWithDuplicates);
+//        Collections.sort(listWithOutDuplicates);
 
         System.out.println("-----------Collection with duplicates--------------");
 
         System.out.println(Arrays.toString(listWithDuplicates.toArray()));
         System.out.println("Size of collection: " + listWithDuplicates.size());
+
+        System.out.println("\n-----LinkedHashSet------");
+        System.out.println(Arrays.toString(setInt.toArray()));
 
         System.out.println("\n----------Collection without duplicates-------------");
 
