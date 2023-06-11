@@ -3,7 +3,7 @@ package peopleInTheCircle;
 import java.util.*;
 
 public class CheckPeople {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
         int N = 99;
         PeopleInTheCircle people = new PeopleInTheCircle();
         List<Integer> arrayList = new ArrayList<>();
